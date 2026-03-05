@@ -79,18 +79,18 @@ public class Titik {
         return Math.sqrt(absis * absis + ordinat * ordinat);
     }
 
-    double getJarak() {
-        return Math.sqrt(Math.pow(this.absis, getAbsis())  + Math.pow(this.ordinat, getOrdinat()));
+    double getJarak(Titik T) {
+    return Math.sqrt(
+        Math.pow(this.absis - T.getAbsis(), 2) +
+        Math.pow(this.ordinat - T.getOrdinat(), 2));
     }
 
-    double refleksiX() {
-        absis = absis * (-1);
-        return 0;
+    void refleksiX() {
+    absis = absis * (-1);
     }
 
-    double refleksiY() {
+    void refleksiY() {
         ordinat = ordinat * (-1);
-        return 0;
     }
 
     Titik getRefleksiX() {
@@ -104,4 +104,8 @@ public class Titik {
     void printTitik() {
         System.out.println("Titik (" + absis + "," + ordinat + ")");
     }
+
+    String getTitikString() { // untuk print di Garis
+    return "(" + absis + "," + ordinat + ")";
+}
 }

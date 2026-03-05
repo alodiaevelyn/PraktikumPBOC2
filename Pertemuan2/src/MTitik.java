@@ -10,6 +10,7 @@ public class MTitik {
         T1.setAbsis(3);
         T1.setOrdinat(4);
         T1.printTitik();
+
         T1.geser(3,4);
         T1.printTitik();
 
@@ -28,6 +29,20 @@ public class MTitik {
         System.out.println("Jumlah Objek Titik = " + Titik.getCounterTitik());
 
         // Cek getKuadran
-        System.out.println("Kuadran T2 = " + T4.getKuadran());
+        System.out.println("Kuadran T4 = " + T4.getKuadran());
+
+        // Cek getJarakPusat
+        System.out.println("Jarak T4 ke pusat = " + T4.getJarakPusat());
+
+        // Cek getJarak
+        System.out.println("Jarak T4 ke T3 = " + T4.getJarak(T3));
+
+        // Refleksi langsung (mengubah objek)
+        T4.refleksiX();
+        T4.printTitik();
+
+        // Refleksi menghasilkan objek baru
+        Titik T5 = T4.getRefleksiY();
+        T5.printTitik();
     }
 }
