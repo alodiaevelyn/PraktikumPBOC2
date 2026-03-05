@@ -53,7 +53,7 @@ public class Mahasiswa {
     }
 
     // Setter Mahasiswa
-    void setNIP(String H) {
+    void setNIM(String H) {
         NIM = H;
     }
 
