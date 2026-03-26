@@ -1,0 +1,69 @@
+/* Nama File    : BangunDatar.java
+ * Deskripsi    : berisi atribut dan metode dalam subclass Lingkaran
+ * Pembuat      : 24060124130087 Alodia Evelyn Pratikno
+ * Tanggal      : 26 Maret 2026
+ */
+
+public class Lingkaran extends BangunDatar implements IResize {
+    /*********** ATRIBUT ***********/
+    private double jari;
+
+    /*********** METHOD ***********/
+    // Konstruktor
+    public Lingkaran() {
+        setJmlSisi(0);
+    }
+
+    public Lingkaran(double jari, String warna, String border) {
+        super(0, warna, border);
+        this.jari = jari;
+    }
+
+    // Getter Lingkaran
+    public double getJari() {
+        return jari;
+    }
+
+    // Setter Lingkaran
+    public void setJari(double jari) {
+        this.jari = jari;
+    }
+
+    // Menghitung Luas
+    public double getLuas() {
+        return (22/7) * jari * jari;
+    }
+
+    // Menghitung Keliling
+    public double getKeliling() {
+        return 2 * (22/7) * jari;
+    }
+
+    // Menghitung Diameter
+    public double getDiameter() {
+        return jari * 2;
+    }
+
+    // Print Lingkaran
+    @Override
+    public void printInfo() {
+        super.printInfo();
+        System.out.println("Jari: " + jari);
+    }
+
+    // Resize
+    @Override
+    public void zoomIn() {
+        jari = jari * 1.1;
+    }
+
+    @Override
+    public void zoomOut() {
+        jari = jari * 0.9;
+    }
+
+    @Override
+    public void zoom(int percent) {
+        jari = jari * percent/100;
+    }
+}
